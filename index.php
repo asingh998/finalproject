@@ -18,5 +18,21 @@ $f3->route('GET /', function () {
     echo $views->render('views/home.html');
 });
 
+//form page
+$f3->route('GET|POST /form', function () {
+    //echo '<h1>It is raining today.</h1>';
+
+    $views = new Template();
+    echo $views->render('views/form.html');
+});
+
+//summary page
+$f3->route('GET|POST /summary', function () {
+    //echo '<h1>It is raining today.</h1>';
+
+    $views = new Template();
+    echo $views->render('views/summary.html');
+});
+
 //Run F3
 $f3->run();
