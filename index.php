@@ -18,20 +18,14 @@ $f3->route('GET /', function () {
     echo $views->render('views/home.html');
 });
 
-//form page
-$f3->route('GET|POST /form', function () {
-    //echo '<h1>It is raining today.</h1>';
+//form
 
-    $views = new Template();
-    echo $views->render('views/form.html');
-});
+$f3->route('GET /form', function()
+{
+    //echo '<h1>form</h1>';
 
-//summary page
-$f3->route('GET|POST /summary', function () {
-    //echo '<h1>It is raining today.</h1>';
-
-    $views = new Template();
-    echo $views->render('views/summary.html');
+    $view = new Template();
+    echo $view->render('views/form.html');
 });
 
 //Run F3
