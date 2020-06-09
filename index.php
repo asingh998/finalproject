@@ -18,7 +18,7 @@ $f3->route('GET /', function () {
     echo $views->render('views/home.html');
 });
 
-//form
+//form 1
 
 $f3->route('GET /form', function()
 {
@@ -26,6 +26,15 @@ $f3->route('GET /form', function()
 
     $view = new Template();
     echo $view->render('views/form.html');
+});
+
+//form 2
+$f3->route('GET /form2', function()
+{
+    //echo '<h1>form</h1>';
+
+    $view = new Template();
+    echo $view->render('views/form2.html');
 });
 
 //Run F3
