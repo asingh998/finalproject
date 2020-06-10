@@ -10,19 +10,57 @@
 </head>
 <body>
 
+<h1>Personal Information</h1>
+<p>* = Required</p>
 <form action="#" method="post" >
-    <div class="form-group">
-        <label>First Name</label>
-        <input class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Last Name</label>
-        <input class="form-control">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label for="first">First Name*</label>
+            <input class="form-control" type="text" name="first" id="first" value="{{ @first}}">
+            <span class="err">
+                        <check if="{{ isset(@errors['first']) }}">
+                            {{ @errors['first'] }}
+                        </check>
+                    </span>
+        </div>
+        <div class="form-group">
+            <label for="last">Last Name*</label>
+            <input class="form-control" type="text" name="last" id="last" value="{{ @last}}">
+            <span class="err">
+                        <check if="{{ isset(@errors['last']) }}">
+                            {{ @errors['last'] }}
+                        </check>
+                    </span>
+        </div>
+        <div class="form-group">
+            <label>Services</label>
+            <select class="form-control" name="service" id="service">
+                <option value="" selected="selected">Select a Service</option>
+                <option value="Oil change">Oil Change</option>
+                <option value="Brakes">Brakes</option>
+                <option value="Wheels">Wheels</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number*<br>(xxx-xxx-xxxx)</label>
+            <input class="form-control" type="text" name="phone" id="phone" value="{{ @phone}}">
+            <span class="err">
+                        <check if="{{ isset(@errors['phone']) }}">
+                            {{ @errors['phone'] }}
+                        </check>
+                    </span>
+        </div>
+
+
+    <!--button-->
+
+        <button type="submit" class="btn btn-primary">Next></button>
     </div>
 
-    <div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+
 </form>
+</div>
+
 </body>
 </html>
