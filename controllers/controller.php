@@ -98,6 +98,11 @@ class controller
                 //Set an error variable in the F3 hive
                 $this->_f3->set('errors["last"]', "Invalid name");
             }
+            if (!$this->_validator->validYear($_POST['year'])) {
+
+                //Set an error variable in the F3 hive
+                $this->_f3->set('errors["year"]', "Invalid year");
+            }
 
             //Data is valid
             else {
@@ -107,6 +112,7 @@ class controller
                     $_SESSION['last'] = $_POST['last'];
                     $_SESSION['model'] = $_POST['model'];
                     $_SESSION['comments'] = $_POST['comments'];
+                    $_SESSION['year'] = $_POST['year'];
 
                     //Redirect to Order 2 page
                     $this->_f3->reroute('summary2');
@@ -115,6 +121,9 @@ class controller
 
         $this->_f3->set('first', $_POST['first']);
         $this->_f3->set('last', $_POST['last']);
+        $this->_f3->set('model', $_POST['model']);
+        $this->_f3->set('comments', $_POST['comments']);
+        $this->_f3->set('year', $_POST['year']);
 
         $views = new Template();
         echo $views->render('views/form2.html');

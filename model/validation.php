@@ -37,4 +37,15 @@ class validation
             return false;
         }
     }
+
+    function validYear($year)
+    {
+        if(preg_match("/^[0-9]{4}$/i", $year)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
 }

@@ -36,15 +36,14 @@
             <label for="last">Bike Year</label>
             <input class="form-control" type="text" name="year" id="year" value="{{ @year}}">
             <span class="err">
-
+                        <check if="{{ isset(@errors['year']) }}">
+                            {{ @errors['year']}}
+                        </check>
                     </span>
         </div>
         <div class="form-group">
             <label for="last">Bike Model</label>
             <input class="form-control" type="text" name="model" id="model" value="{{ @model}}">
-            <span class="err">
-
-                    </span>
         </div>
 
         <div class="form-group">
