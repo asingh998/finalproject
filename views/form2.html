@@ -15,20 +15,36 @@
     <form action="#" method="post" >
         <div class="col-sm-6">
         <div class="form-group">
-            <label>First Name</label>
-            <input class="form-control">
+            <label for="first">First Name*</label>
+            <input class="form-control" type="text" name="first" id="first" value="{{ @first}}">
+            <span class="err">
+                        <check if="{{ isset(@errors['first']) }}">
+                            {{ @errors['first'] }}
+                        </check>
+                    </span>
         </div>
         <div class="form-group">
-            <label>Last Name</label>
-            <input class="form-control">
+            <label for="last">Last Name*</label>
+            <input class="form-control" type="text" name="last" id="last" value="{{ @last}}">
+            <span class="err">
+                        <check if="{{ isset(@errors['last']) }}">
+                            {{ @errors['last'] }}
+                        </check>
+                    </span>
         </div>
         <div class="form-group">
-            <label>Bike Year</label>
-            <input class="form-control">
+            <label for="last">Bike Year</label>
+            <input class="form-control" type="text" name="year" id="year" value="{{ @year}}">
+            <span class="err">
+
+                    </span>
         </div>
         <div class="form-group">
-            <label>Bike Model</label>
-            <input class="form-control">
+            <label for="last">Bike Model</label>
+            <input class="form-control" type="text" name="model" id="model" value="{{ @model}}">
+            <span class="err">
+
+                    </span>
         </div>
 
         <div class="form-group">
