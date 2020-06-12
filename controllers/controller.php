@@ -150,5 +150,14 @@ class controller
 
         //session_destroy();
     }
+
+    /**
+     * go to admin
+     */
+    public function admin()
+    {
+        $views = new Template();
+        echo $views->render('views/admin.html');
+    }
 }
 

@@ -47,5 +47,11 @@ $f3->route('GET /summary2', function()
    $GLOBALS['controller']->summary2();
 });
 
+//admin
+$f3->route('GET /admin', function()
+{
+    $GLOBALS['controller']->admin();
+});
+
 //Run F3
 $f3->run();
