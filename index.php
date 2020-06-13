@@ -17,6 +17,8 @@ $f3 = Base::instance();
 $validator = new validation();
 $controller = new controller($f3, $validator);
 
+$db = new database();
+
 //Default route
 $f3->route('GET /', function () {
    $GLOBALS['controller']->home();
