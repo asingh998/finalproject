@@ -57,10 +57,17 @@ class controller
             //Data is valid
             else {
                 if(empty($this->_f3->get('errors'))){
+                    //Create an form object
+                    $form = new form();
+                    $form->setFirst($_POST['first']);
+                    $form->setLast($_POST['last']);
+                    $form->setPhone($_POST['phone']);
+
                     //Store the data in the session array
-                    $_SESSION['first'] = $_POST['first'];
-                    $_SESSION['last'] = $_POST['last'];
-                    $_SESSION['phone'] = $_POST['phone'];
+                    $_SESSION['form'] = $form;
+                    //$_SESSION['first'] = $_POST['first'];
+                    //$_SESSION['last'] = $_POST['last'];
+                    //$_SESSION['phone'] = $_POST['phone'];
                     $_SESSION['service'] = $_POST['service'];
 
                     //Redirect to Order 2 page
@@ -134,6 +141,9 @@ class controller
      */
     public function summary()
     {
+        //Write info to database
+        $GLOBALS['db']->writeForm($_SESSION['form']);
+
         $view = new Template();
         echo $view->render('views/summary.html');
 

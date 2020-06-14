@@ -13,10 +13,30 @@ class database
         try {
             //Instantiate a database object
             $this->_dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-            echo 'Connected to database!';
+            //echo 'Connected to database!';
         }
         catch(PDOException $e) {
             echo $e->getMessage();
         }
+    }
+
+    function writeForm($form)
+    {
+
+        //Write to database
+        //1. Define the query
+        $sql = "INSERT INTO data_table (first_name, last_name, phone)
+                VALUES (:first_name, :last_name, :phone)";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':first_name',$form->getFirst());
+        $statement->bindParam(':last_name',$form->getLast());
+        $statement->bindParam(':phone',$form->getPhone());
+
+        //4. Execute the statement
+        $statement->execute();
     }
 }

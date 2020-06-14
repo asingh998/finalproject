@@ -8,9 +8,9 @@
     <p>Thank You! </p>
 
     <div class="container" id="summary">
-        <p>Name: {{ @SESSION.first}} {{ @SESSION.last}}</p>
+        <p>Name: {{ @SESSION.form->getFirst() }} {{ @SESSION.form->getLast() }}</p>
         <hr>
-        <p>Phone: {{ @SESSION.phone}}</p>
+        <p>Phone: {{ @SESSION.form->getPhone() }}</p>
         <hr>
         <p>Service: {{ @SESSION.service}}</p>
 
