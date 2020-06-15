@@ -14,31 +14,18 @@ form {
 h1 {
     margin: auto;
     width: 50%;
-
+    text-align: center;
     padding: 10px;
+    color: red;
 }
 
 body{
     background-color:gray;
 }
 
-.bannerimage {
-    width: 100%;
-    height: 25px;
-    background-color: red;
-    background-position: center;
-}
 
-.bannerimage2 {
-    width: 100%;
-    height: 25px;
-    background-color: darkgreen;
-    background-position: center;
-}
-
-.bannerimage3 {
-    width: 100%;
-    height: 25px;
-    background-color: whitesmoke;
-    background-position: center;
+#summary{
+    text-align: center;
+    font-size: large;
+    color: black;
 }
