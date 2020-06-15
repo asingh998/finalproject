@@ -8,13 +8,13 @@
     <p>Thank You! </p>
 
     <div class="container" id="summary">
-        <p>Name: {{ @SESSION.first}} {{ @SESSION.last}}</p>
+        <p>Name: {{ @SESSION.form->getFirst() }} {{ @SESSION.form->getLast() }}</p>
         <hr>
-        <p>Bike Year: {{ @SESSION.year}}</p>
+        <p>Bike Year: {{ @SESSION.form->getYear() }}</p>
         <hr>
-        <p>Bike Model: {{ @SESSION.model}}</p>
+        <p>Bike Model: {{ @SESSION.form->getModel() }}</p>
         <hr>
-        <p>Comments: {{ @SESSION.comments}}</p>
+        <p>Comments: {{ @SESSION.form->getComments() }}</p>
     </div>
 </body>
 </html>

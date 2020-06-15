@@ -25,8 +25,8 @@ class database
 
         //Write to database
         //1. Define the query
-        $sql = "INSERT INTO data_table (first_name, last_name, phone)
-                VALUES (:first_name, :last_name, :phone)";
+        $sql = "INSERT INTO data_table (first_name, last_name, phone, service, year, model, comment)
+                VALUES (:first_name, :last_name, :phone, :service, :year, :model, :comment)";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -35,6 +35,10 @@ class database
         $statement->bindParam(':first_name',$form->getFirst());
         $statement->bindParam(':last_name',$form->getLast());
         $statement->bindParam(':phone',$form->getPhone());
+        $statement->bindParam(':service',$form->getService());
+        $statement->bindParam(':year',$form->getYear());
+        $statement->bindParam(':model',$form->getModel());
+        $statement->bindParam(':comment',$form->getComments());
 
         //4. Execute the statement
         $statement->execute();

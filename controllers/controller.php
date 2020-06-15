@@ -62,13 +62,14 @@ class controller
                     $form->setFirst($_POST['first']);
                     $form->setLast($_POST['last']);
                     $form->setPhone($_POST['phone']);
+                    $form->setService($_POST['service']);
 
-                    //Store the data in the session array
+                    //Store the object in the session array
                     $_SESSION['form'] = $form;
                     //$_SESSION['first'] = $_POST['first'];
                     //$_SESSION['last'] = $_POST['last'];
                     //$_SESSION['phone'] = $_POST['phone'];
-                    $_SESSION['service'] = $_POST['service'];
+                    //$_SESSION['service'] = $_POST['service'];
 
                     //Redirect to Order 2 page
                     $this->_f3->reroute('summary');
@@ -114,12 +115,22 @@ class controller
             //Data is valid
             else {
                 if(empty($this->_f3->get('errors'))){
+                    //Create an form object
+                    $form = new form();
+                    $form->setFirst($_POST['first']);
+                    $form->setLast($_POST['last']);
+                    $form->setModel($_POST['model']);
+                    $form->setComments($_POST['comments']);
+                    $form->setYear($_POST['year']);
+
                     //Store the data in the session array
-                    $_SESSION['first'] = $_POST['first'];
-                    $_SESSION['last'] = $_POST['last'];
-                    $_SESSION['model'] = $_POST['model'];
-                    $_SESSION['comments'] = $_POST['comments'];
-                    $_SESSION['year'] = $_POST['year'];
+                    //Store the object in the session array
+                    $_SESSION['form'] = $form;
+                    //$_SESSION['first'] = $_POST['first'];
+                    //$_SESSION['last'] = $_POST['last'];
+                    //$_SESSION['model'] = $_POST['model'];
+                    //$_SESSION['comments'] = $_POST['comments'];
+                    //$_SESSION['year'] = $_POST['year'];
 
                     //Redirect to Order 2 page
                     $this->_f3->reroute('summary2');
@@ -155,6 +166,9 @@ class controller
      */
     public function summary2()
     {
+        //Write info to database
+        $GLOBALS['db']->writeForm($_SESSION['form']);
+
         $view = new Template();
         echo $view->render('views/summary2.html');
 
