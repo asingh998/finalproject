@@ -43,4 +43,23 @@ class database
         //4. Execute the statement
         $statement->execute();
     }
+
+    function getForm()
+    {
+        //1. Define the query
+        $sql = "SELECT * FROM data_table 
+                ORDER BY id DESC";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters - SKIP
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Process the results
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

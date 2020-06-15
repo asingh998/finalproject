@@ -180,6 +180,10 @@ class controller
      */
     public function admin()
     {
+        $result = $GLOBALS['db']->getForm();
+
+        $this->_f3->set('forms', $result);
+
         $views = new Template();
         echo $views->render('views/admin.html');
     }
