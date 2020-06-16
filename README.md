@@ -1,6 +1,6 @@
 # finalproject
 
-MVC pattern is used to implement website.
+MVC pattern is used to implement website. Seperate directories were created for classes, controllers, model, views, images, styles.
 Fat-Free framework is used to all URLs and routing. Routes has been created that are used to go from one page to another.
 User data is getting stored into datatable and can be viewed from the datatable.
 Commits were made by both of us, and usefull comments were used in commits.
