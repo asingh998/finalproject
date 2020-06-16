@@ -8,6 +8,7 @@
  */
 class validation
 {
+    //names
     function validName($first)
     {
         if(!empty($first) && ctype_alpha($first)) {
@@ -27,7 +28,7 @@ class validation
             return false;
         }
     }
-
+    //phone
     function validPhone($phone)
     {
         if(preg_match("/^([1]-)?[0-9]{3}-[0-9]{3}-[0-9]{4}$/i", $phone)) {
@@ -37,7 +38,7 @@ class validation
             return false;
         }
     }
-
+    //year
     function validYear($year)
     {
         if(preg_match("/^[0-9]{4}$/i", $year)) {

@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!--
+Arshdeep Singh
+Roldan Barbante
+This is the tuning appointment form asking user for information
+and storing the info in database.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,6 +26,7 @@
 <h1>Track Day</h1>
 
     <form action="#" method="post" >
+        <!--Name-->
         <div class="col-sm-6">
         <div class="form-group">
             <label for="first">First Name*</label>
@@ -39,6 +46,7 @@
                         </check>
                     </span>
         </div>
+        <!--Bike year-->
         <div class="form-group">
             <label for="last">Bike Year</label>
             <input class="form-control" type="text" name="year" id="year" value="{{ @year}}">
@@ -48,18 +56,18 @@
                         </check>
                     </span>
         </div>
+        <!--Bike model-->
         <div class="form-group">
             <label for="last">Bike Model</label>
             <input class="form-control" type="text" name="model" id="model" value="{{ @model}}">
         </div>
-
+        <!--Comments-->
         <div class="form-group">
             <label for="comments">Comments</label>
             <textarea class="form-control" rows="5" type="text" name="comments" id="comments" placeholder="What modifications have been done to the bike?"></textarea>
         </div>
-
+        <!--Button-->
         <div>
-
             <div class="home">
                 <button type="submit" class="btn btn-primary">Submit</button><br>
                 <a href="{{ @BASE }}">Home page</a>

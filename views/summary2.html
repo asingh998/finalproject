@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+Arshdeep Singh
+Roldan Barbante
+This is the summary page showing the user their information.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +24,7 @@
 </div>
 
     <h1>Thank You! </h1>
-
+    <!--Display information-->
     <div class="container" id="summary">
         <p>Name: {{ @SESSION.form->getFirst() }} {{ @SESSION.form->getLast() }}</p>
         <hr>
@@ -29,7 +34,7 @@
         <hr>
         <p>Comments: {{ @SESSION.form->getComments() }}</p>
     </div>
-
+    <!--link to home-->
     <div class="home">
         <a href="{{ @BASE }}">Home page</a>
     </div>

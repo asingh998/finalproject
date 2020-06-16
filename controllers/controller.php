@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Class controller
+ * @author Arshdeep Singh
+ * @author Roldan Barbante
+ * This is the controller class.
+ */
 
 class controller
 {

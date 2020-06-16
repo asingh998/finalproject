@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!--
+Arshdeep Singh
+Roldan Barbante
+This is the appointment form asking user for information
+and storing the info in database.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,6 +27,7 @@
 <p>* = Required</p>
 <form action="#" method="post" >
     <div class="col-sm-6">
+        <!--Name-->
         <div class="form-group">
             <label for="first">First Name*</label>
             <input class="form-control" type="text" name="first" id="first" value="{{ @first}}">
@@ -39,6 +46,7 @@
                         </check>
                     </span>
         </div>
+        <!--Service-->
         <div class="form-group">
             <label>Services</label>
             <select class="form-control" name="service" id="service">
@@ -49,6 +57,7 @@
                 <option value="Others">Others</option>
             </select>
         </div>
+        <!--Phone-->
         <div class="form-group">
             <label for="phone">Phone Number*<br>(xxx-xxx-xxxx)</label>
             <input class="form-control" type="text" name="phone" id="phone" value="{{ @phone}}">
@@ -58,7 +67,6 @@
                         </check>
                     </span>
         </div>
-
 
     <!--button-->
         <div>

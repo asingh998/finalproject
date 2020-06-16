@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Class form
+ * @author Arshdeep Singh
+ * @author Roldan Barbante
+ * This is the form class.
+ */
 
 class form
 {

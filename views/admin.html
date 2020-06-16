@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+Arshdeep Singh
+Roldan Barbante
+This is the admin page pulling the data from the database table.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,14 +24,13 @@
 
     </div>
 </div>
-
+<!--create a table with information-->
 <div class="container">
-    <h1>Display all Data</h1>
+    <h1>Displaying all Data</h1>
 
     <table class="table">
         <thead>
         <tr>
-            <td>ID</td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>Service</td>
@@ -39,7 +43,6 @@
         <tbody>
         <repeat group="{{ @forms }}" value="{{ @form }}">
             <tr>
-                <td>{{ @form['id']}}</td>
                 <td>{{ @form['first_name'] }}</td>
                 <td>{{ @form['last_name'] }}</td>
                 <td>{{ @form['service'] }}</td>
@@ -51,7 +54,7 @@
         </repeat>
         </tbody>
     </table>
-
+    <!--link to home-->
     <div class="home">
         <a href="{{ @BASE }}">Home page</a>
     </div>

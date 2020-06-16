@@ -3,6 +3,13 @@
 //Require our config file
 require '/home/asinghg1/config.php';
 
+/**
+ * Class database
+ * @author Arshdeep Singh
+ * @author Roldan Barbante
+ * This is the database class, connecting to the database
+ * and information.
+ */
 class database
 {
     private $_dbh;
@@ -47,8 +54,7 @@ class database
     function getForm()
     {
         //1. Define the query
-        $sql = "SELECT * FROM data_table 
-                ORDER BY id DESC";
+        $sql = "SELECT * FROM data_table ";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
